@@ -11,14 +11,14 @@
 |
 */
 // 中间件
-Route::middleware('auth')->get('/', function () {
-    echo '这里是首页 ' . Auth::user()->username . ' 欢迎👏👏登录<br>';
-
-    echo '<form action="' . route('logout') . '" method="post">' .
-        csrf_field() . '<input type="submit" value="退出登录"></form>';
-});
+Route::get('/', 'PostsController@index')->name('index');
+Route::get('/categories/{category}', 'PostsController@index')->name('category');
 
 
 Route::auth();
 
 Route::get('/posts/{post}', 'PostsController@show');
+
+Route::get('/users/{user}', 'UsersController@show')->name('users.show');
+Route::put('/users/{user}', 'UsersController@ajaxUpdate')->name('users.ajaxUpdate');
+

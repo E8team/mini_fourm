@@ -14,4 +14,14 @@ class Category extends Model
     public function posts(){
         return $this->hasMany(Post::class);
     }
+
+    /**
+     * 为路由模型获取键名。
+     *
+     * @return string
+     */
+    public function getRouteKeyName()
+    {
+        return 'slug';
+    }
 }
