@@ -21,9 +21,7 @@ class UsersController extends Controller
             $data['username'] = e($data['username']);
         }
 
-        if (isset($data['intro'])) {
-            $data['intro'] = e($data['intro']);
-        }
+        $data['intro'] = isset($data['intro']) ? e($data['intro']) : '';
 
         $file = $request->file('avatar');
 
