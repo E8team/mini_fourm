@@ -11,7 +11,7 @@
 |
 */
 // 中间件
-Route::get('/', 'PostsController@index')->name('index');
+Route::middleware('auth')->get('/', 'PostsController@index')->name('index');
 Route::get('/categories/{category}', 'PostsController@index')->name('category');
 
 
