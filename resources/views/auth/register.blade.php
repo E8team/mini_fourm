@@ -16,14 +16,14 @@
                     </div>
                     <div class="input_item{{$errors->has('password')?' has_error':''}}">
                         <label>密码</label>
-                        <input placeholder="请输入用户名" type="password" name="password">
+                        <input placeholder="请输入密码" type="password" name="password">
                         @if($errors->has('password'))
                             <p class="error">{{$errors->first('password')}}</p>
                         @endif
                     </div>
                     <div class="input_item">
                         <label>确认密码</label>
-                        <input placeholder="请输入用户名" type="password" name="password_confirmation">
+                        <input placeholder="请重复输入密码" type="password" name="password_confirmation">
                     </div>
                     <button class="btn" type="submit">
                         注册 <i class="iconfont icon-arrow-right-copy-copy-copy"></i>
